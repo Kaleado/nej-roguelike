@@ -1,5 +1,7 @@
-class Character:
-	
+import libtcodpy as libtcod
+import Level
+
+class Character:	
 	#strength, agility, maxhp and hp
 	_str = 0
 	_agl = 0
@@ -27,12 +29,12 @@ class Character:
 					self._str = 10
 				if not self._agl:
 					self._agl = 10
-		
+		                        
 			
 
 	#puts player char in place
 	def showat(self):
-    	libtcod.console_put_char(0, self.x, self.y, self.char, libtcod.BKGND_NONE)
+    	        libtcod.console_put_char(0, self.x, self.y, self.char, libtcod.BKGND_NONE)
 
 	# A delta for moving left/right x amount, and up/down y amount
 	def move(x, y):
