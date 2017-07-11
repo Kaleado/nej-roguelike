@@ -23,11 +23,11 @@ class Character:
 				self._str = stats["str"]
 				slef._agl = stats["agl"]
 			except KeyError:
-				if not self._maxhp:
+				if self._maxhp is None:
 					self._maxhp = 10
-				if not self._str:
+				if self._str is None:
 					self._str = 10
-				if not self._agl:
+				if self._agl is None:
 					self._agl = 10
 		                        
 			
