@@ -1,12 +1,12 @@
 import libtcodpy as libtcod
-import Level
+from Level import Level
 
 class Character:	
 	#strength, agility, maxhp and hp
 	_str = 0
 	_agl = 0
-	hp = 10
 	_maxhp = 10
+	hp = 10
 	
 
 	# Requires a playes character and initial items
@@ -34,15 +34,12 @@ class Character:
 
 	#puts player char in place
 	def showat(self):
-    	        libtcod.console_put_char(0, self.x, self.y, self.char, libtcod.BKGND_NONE)
+		libtcod.console_put_char(0, self.x, self.y, self.char, libtcod.BKGND_NONE)
 
 	# A delta for moving left/right x amount, and up/down y amount
-	def move(x, y):
-		if Level.getcreatureatxy(self.x + x, self.y + y) != None:
-			self.attack(self.x + x, self.y + y)
-		else:
-			self.y += y
-			self.x += x
+	def move(self, x, y):
+		self.y += y
+		self.x += x
 
-	def attack(x, y):
+	def attack(self, x, y):
 		pass
