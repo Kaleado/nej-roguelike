@@ -1,4 +1,5 @@
 import libtcodpy as libtcod
+import level
  
 #actual size of the window
 SCREEN_WIDTH = 80
@@ -10,7 +11,6 @@ LIMIT_FPS = 20  #20 frames-per-second maximum
 def handle_keys():
     global playerx, playery
  
-    #key = libtcod.console_check_for_keypress()  #real-time
     key = libtcod.console_wait_for_keypress(True)  #turn-based
  
     if key.vk == libtcod.KEY_ENTER and key.lalt:
@@ -46,7 +46,7 @@ playerx = SCREEN_WIDTH/2
 playery = SCREEN_HEIGHT/2
  
 while not libtcod.console_is_window_closed():
- 
+    level.currentLevel.show()
     libtcod.console_set_default_foreground(0, libtcod.white)
     libtcod.console_put_char(0, playerx, playery, '@', libtcod.BKGND_NONE)
  
