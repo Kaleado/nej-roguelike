@@ -16,12 +16,12 @@ import libtcodpy as libtcod
 def draw(startx, starty, data):
 	# Case for single char
 	if type(data) is str:
-		libtcod.console_put_char(0, startx, starty, data[0], libtcod.BKGND_NONE)
+		putch(data[0], startx, starty)
 	else:
 		# Case for 2d array
 		for i in range(0, len(data)):
 			for j in range(0, len(data[i])):
-				libtcod.console_put_char(0, startx + i, starty + j, data[i][j], libtcod.BKGND_NONE)
+				putch(data[i][j], startx + i, starty + j)
 
 def putch(char, x, y):
 	# Check if the dict of colours exists
