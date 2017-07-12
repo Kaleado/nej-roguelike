@@ -14,7 +14,7 @@ class Character:
 		self.items = []
 		self.y = y
 		self.x = x
-		self._color = libtcod.red
+		self._color = color
 		
 		if stats != None:
 			try:
