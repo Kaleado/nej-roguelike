@@ -16,7 +16,7 @@ import libtcodpy as libtcod
 def draw(startx, starty, data):
 	# Case for single char
 	if type(data) is str:
-    	libtcod.console_put_char(0, startx, starty, data[0], libtcod.BKGND_NONE)
+		libtcod.console_put_char(0, startx, starty, data[0], libtcod.BKGND_NONE)
 	else:
 		# Case for 2d array
 		for i in range(0, len(data)):
