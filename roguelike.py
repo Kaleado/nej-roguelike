@@ -59,13 +59,13 @@ player = Character('@', [], SCREEN_WIDTH/2, SCREEN_HEIGHT/2, None)
 while not libtcod.console_is_window_closed():
     Level.currentLevel.show()
     libtcod.console_set_default_foreground(0, libtcod.red)
-    libtcod.console_put_char(0, player.x, player.y, player.char, libtcod.BKGND_NONE)
+    libtcod.console_put_char(0, player.x, player.y, player.char(), libtcod.BKGND_NONE)
     libtcod.console_set_default_foreground(0, libtcod.white)
 
     test = [ ['%','%','%','%','%','%'],
-     		 ['%','%','%','%','%','%'],
-     		 ['%','%','%','%','%','%'],
-     		 ['%','%','%','%','%','%'] ]
+         	 ['%','%','%','%','%','%'],
+         	 ['%','%','%','%','%','%'],
+         	 ['%','%','%','%','%','%'] ]
 
     Display.draw(0,0,test)
 

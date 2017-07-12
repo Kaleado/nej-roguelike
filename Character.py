@@ -8,13 +8,13 @@ class Character:
 	_maxhp = 10
 	hp = 10
 	
-
 	# Requires a playes character and initial items
-	def __init__(self, char='@', items=[], y=0, x=0, stats=None):
-		self.char = char
+	def __init__(self, char='@', items=[], y=0, x=0, stats=None, color=libtcod.red):
+		self._char = char
 		self.items = []
 		self.y = y
 		self.x = x
+		self._color = libtcod.red
 		
 		if stats != None:
 			try:
@@ -29,8 +29,6 @@ class Character:
 					self._str = 10
 				if self._agl is None:
 					self._agl = 10
-		                        
-			
 
 	#puts player char in place
 	def showat(self):
@@ -43,3 +41,7 @@ class Character:
 
 	def attack(self, x, y):
 		pass
+	def char(self):
+		return self._char
+	def color(self):
+		return self._color

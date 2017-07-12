@@ -23,15 +23,13 @@ def draw(startx, starty, data):
 			for j in range(0, len(data[i])):
 				putch(data[i][j], startx + i, starty + j)
 
-def putch(char, x, y):
-	# Check if the dict of colours exists
-	if 'colors' in locals():
-		# Print found color, otherwise white
-		if char in colors:
-			libtcod.console_set_default_foreground(0, colors[char])
-			libtcod.console_put_char(0, x, y, char, libtcod.BKGND_NONE)
-			libtcod.console_set_default_foreground(0, libtcod.white)
-		else:
-			libtcod.console_set_default_foreground(0, libtcod.white)
-			libtcod.console_put_char(0, x, y, char, libtcod.BKGND_NONE)
+def putch(obj, x, y):
+	# If a string, print the first character and white, the default
+	if isinstance(obj, basestring):
+		libtcod.console_set_default_foreground(0, libtcod.white)
+		libtcod.console_put_char(0, x, y, obj[0], libtcod.BKGND_NONE)
+	# Otherwise, print the objects character and it's designated color
+	else:
+		libtcod.console_set_default_foreground(0, obj.color())
+		libtcod.console_put_char(0, x, y, obj.char(), libtcod.BKGND_NONE)
 			
