@@ -1,6 +1,7 @@
 import libtcodpy as libtcod
 import Level
 from Character import Character
+import Display
 
 #actual size of the window
 SCREEN_WIDTH = 80
@@ -60,8 +61,17 @@ while not libtcod.console_is_window_closed():
     libtcod.console_set_default_foreground(0, libtcod.red)
     libtcod.console_put_char(0, player.x, player.y, player.char, libtcod.BKGND_NONE)
     libtcod.console_set_default_foreground(0, libtcod.white)
+
+    test = [ ['%','%','%','%','%','%'],
+     		 ['%','%','%','%','%','%'],
+     		 ['%','%','%','%','%','%'],
+     		 ['%','%','%','%','%','%'] ]
+
+    Display.draw(0,0,test)
+
     libtcod.console_flush()
     libtcod.console_put_char(0, player.x, player.y, ' ', libtcod.BKGND_NONE)
+    
     
     #handle keys and exit game if needed
     exit = handle_keys()
